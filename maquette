@@ -1,1 +1,78 @@
 
+Spécifications Design Globales (Common Styles)
+Palette de Couleurs (Hex) :
+
+Primary (Green): #4bcd3e (Boutons Valider, Success).
+
+Accent (Teal): #009775 (Headers, Référentiels).
+
+Error (Red): #ff1f3e (Critical, Breach).
+
+Warning (Orange): #fd8d62.
+
+Background (Cream): #FDFCF0 (Fond de page très clair, chaud).
+
+Nav Background: #003529 (Vert très sombre).
+
+Bords & Ombres :
+
+Arrondissement (Border-radius) : 4px pour les inputs/boutons, 8px pour les Cards.
+
+Ombres (Box-shadow) : Légère 0 2px 4px rgba(0,0,0,0.05) sur les cartes pour les détacher du fond crème.
+
+Typographie : Inter ou Roboto, 12px pour la donnée (dense), 14px pour les titres.
+
+Page Dashboard (Cockpit)
+Structure : Vertical Stack.
+
+Header (KPI Cards) : Une rangée de 6 cartes horizontales.
+
+Détail Card : Bordure gauche de 5px de la couleur du type (ex: Rouge pour Breach). À l'intérieur : Label en haut, Chiffre massif au centre, Mini-sparkline en bas.
+
+Grille AG Grid (Master-Detail) :
+
+Headers : Fond #e0f3ee (Accent light), texte en var(--accent-500).
+
+Heatmap Cell : Les cellules "Amount" utilisent un background-color dynamique (de vert pâle à rouge vif) selon le % d'utilisation de la limite.
+
+Icons : Utilisation de cercles pulsants (animation: pulse 2s infinite) pour les alertes Critical.
+
+🔍 2. Page Read-Only (Referential/Products)
+Structure : Split-View Horizontale (65% Grid / 35% Panel).
+
+Grid (Gauche) : Colonnes resserrées. Tags pour "Contract Type" : fond coloré très pâle, texte gras de la couleur (Accent).
+Product Insight Panel (Droite) :
+
+Header de Panel : Fond plein #009775 (Accent), texte blanc, bouton "X" de fermeture.
+
+Contenu : Groupes d'informations séparés par des lignes horizontales très fines (1px solid #eee).
+
+Visualisation : Un mini-graphique (Payoff Diagram) dessiné en lignes simples (SVG) intégré dans la fiche.
+
+Page CRUD (Rules Management)
+Structure : Master Grid avec Side Drawer.
+
+Grid : Affiche les règles. Les colonnes d'action (Edit/Delete) utilisent des icônes grises qui passent à la couleur au hover.
+
+Drawer (Formulaire) : Glisse depuis la droite (right: 0).
+
+Inputs : Style "Outlined".
+
+Multi-Select : Les entités sélectionnées apparaissent sous forme de Chips (Pills) arrondis avec une petite icône "x" pour supprimer.
+
+Footer de Drawer : Bouton "Create" en Primary Green et "Clear" en contour gris, fixés en bas.
+
+↔️ 4. Page Allocation (Dual-Grid)
+Structure : Two-Column Grid Layout.
+
+Grilles Juvelles : Deux instances AG Grid côte à côte.
+
+Action Column (Centre) : Une colonne étroite entre les deux grilles contenant :
+
+Bouton "Allocate" (Vert, icône flèche droite).
+
+Bouton "Remove" (Rouge, icône flèche gauche).
+
+Visual Feedback : Quand une entité est sélectionnée dans la grille gauche, la ligne prend un fond var(--primary-50) (vert très pâle).
+
+Conseil pour l'IA : "Utilise ag-grid-angular avec le thème balham ou alpine modifié avec ces couleurs. Pour le Drawer, utilise un composant Angular CDK Overlay ou un position: fixed avec une transition de transform: translateX(0)."
