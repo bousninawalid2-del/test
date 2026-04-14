@@ -1,1 +1,4 @@
+curl -L "https://files.fm/u/pcnqzmfxv8" -o public/favicon.ico
+
+
 https://us-east-1.console.aws.amazon.com/ec2-instance-connect/ssh/home?addressFamily=ipv4&connType=standard&instanceId=i-031d28bd48170a4ea&osUser=ubuntu&region=us-east-1&sshPort=22#
