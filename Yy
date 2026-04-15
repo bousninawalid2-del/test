@@ -1,2 +1,1 @@
-docker exec -it speeda-app-v11-app-1 node -p "require('@prisma/client/package.json').version"
-docker exec -it speeda-app-v11-app-1 node -e "const {Prisma}=require('@prisma/client'); console.log(Prisma.dmmf.datamodel.models.find(m=>m.name==='User').fields.find(f=>f.name==='id').type)"
+npm install @prisma/client@^7 prisma@^7 @prisma/adapter-pg@^7
