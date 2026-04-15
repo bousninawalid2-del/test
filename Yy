@@ -1,1 +1,28 @@
-docker compose logs migrate --tail 200
+ubuntu@ip-172-31-24-57:~/speeda-app-v1.1$ docker compose logs migrate
+WARN[0000] The "ANTHROPIC_API_KEY" variable is not set. Defaulting to a blank string. 
+WARN[0000] /home/ubuntu/speeda-app-v1.1/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+migrate-1  | Loaded Prisma config from prisma.config.ts.
+migrate-1  | 
+migrate-1  | Prisma schema loaded from prisma/schema.prisma.
+migrate-1  | Datasource "db": PostgreSQL database "speeda", schema "public" at "db:5432"
+migrate-1  | 
+migrate-1  | 4 migrations found in prisma/migrations
+migrate-1  | 
+migrate-1  | Applying migration `20260406125255_initial_dev_migration`
+migrate-1  | Applying migration `20260410003756_add_action_task_competitor`
+migrate-1  | Applying migration `20260415103500_add_user_discussion_code`
+migrate-1  | Applying migration `20260415113000_restructure_user_id_bigint`
+migrate-1  | 
+migrate-1  | The following migration(s) have been applied:
+migrate-1  | 
+migrate-1  | migrations/
+migrate-1  |   └─ 20260406125255_initial_dev_migration/
+migrate-1  |     └─ migration.sql
+migrate-1  |   └─ 20260410003756_add_action_task_competitor/
+migrate-1  |     └─ migration.sql
+migrate-1  |   └─ 20260415103500_add_user_discussion_code/
+migrate-1  |     └─ migration.sql
+migrate-1  |   └─ 20260415113000_restructure_user_id_bigint/
+migrate-1  |     └─ migration.sql
+migrate-1  | 
+migrate-1  | All migrations have been successfully ap
