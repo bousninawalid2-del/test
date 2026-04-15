@@ -1,1 +1,6 @@
+cat package.json | grep prisma -n
+ls -la package-lock.json
+grep -n "\"@prisma/client\"" package-lock.json | head
+
+
 npm install @prisma/client@^7 prisma@^7 @prisma/adapter-pg@^7
