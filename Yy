@@ -1,1 +1,12 @@
-docker exec -it <db_container> psql -U speeda -d speeda -c "select column_name, data_type from information_schema.columns where table_name='User' and column_name='id';"
+ubuntu@ip-172-31-24-57:~/speeda-app-v1.1$ docker ps
+CONTAINER ID   IMAGE                COMMAND                  CREATED          STATUS                      PORTS                                         NAMES
+3cafd5c0ad54   speeda-app-v11-app   "docker-entrypoint.s…"   20 minutes ago   Up 19 minutes (unhealthy)   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp   speeda-app-v11-app-1
+7684cbdac99e   n8nio/n8n:latest     "tini -- /docker-ent…"   20 minutes ago   Up 20 minutes               0.0.0.0:5678->5678/tcp, [::]:5678->5678/tcp   speeda-app-v11-n8n-1
+6a808e9a6bb7   postgres:16-alpine   "docker-entrypoint.s…"   20 minutes ago   Up 20 minutes (healthy)     5432/tcp                                      speeda-app-v11-db-1
+ubuntu@ip-172-31-24-57:~/speeda-app-v1.1$ docker exec -it speeda-app-v11-db-1 psql -U speeda -d speeda -c "select column_name, data_type from information_schema.columns where table_name='User' and column_name='id';"
+ column_name | data_type 
+-------------+-----------
+ id          | bigint
+(1 row)
+
+ubuntu@ip-172-31-24-57:~/speeda-app-v1.1$
